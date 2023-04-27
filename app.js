@@ -3,6 +3,7 @@ const cors = require('cors')
 const { route: userRoute } = require('./Routes/UserRoute')
 const { route: taskRoute } = require('./Routes/TaskRoute')
 const { error: errorMW } = require('./middlewares/error')
+const { corsOptions } = require('./config/cors_options')
 const cookieParser = require('cookie-parser')
 
 const app = express()
@@ -12,7 +13,8 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Credentials', true)
   next()
 })
-app.use(cors())
+
+app.use(cors(corsOptions))
 
 app.use(express.json())
 app.use(cookieParser())
