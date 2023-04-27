@@ -1,7 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const { route: userRoute } = require('./Routes/UserRoute')
-const { route: taskRoute } = require('./routes/TaskRoute')
+const { route: taskRoute } = require('./Routes/TaskRoute')
 const { error: errorMW } = require('./middlewares/error')
 const cookieParser = require('cookie-parser')
 
