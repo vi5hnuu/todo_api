@@ -4,7 +4,7 @@ const sendToken = (user, statusCode, res) => {
 
   //Toptions for cookies
   const options = {
-    expires: new Date(Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000),
+    expiresIn: new Date(Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000),
     httpOnly: true,
     domain: ".todo-vi.onrender.com"
   }
