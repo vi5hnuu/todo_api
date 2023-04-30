@@ -6,7 +6,7 @@ const sendToken = (user, statusCode, res) => {
   const options = {
     expiresIn: new Date(Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000),
     httpOnly: true,
-    domain: "https://todo-vi.onrender.com"
+    domain: ".onrender.com"
   }
   console.log({ username: user.username, email: user.email, token });
   res.status(statusCode).cookie('token', token, options).json({
